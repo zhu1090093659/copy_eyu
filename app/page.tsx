@@ -5,7 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { Header } from "@/components/Header";
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { Sidebar } from "@/components/Sidebar";
-import { getArticles, searchArticles, Article } from "@/lib/api";
+import { fetchArticles, searchArticles, Article } from "@/lib/staticApi";
 import { debounce, addToSearchHistory } from "@/lib/utils";
 import Image from "next/image";
 
@@ -32,7 +32,7 @@ export default function HomePage() {
   // 加载文章数据
   useEffect(() => {
     const loadArticles = async () => {
-      const articles = await getArticles();
+      const articles = await fetchArticles();
       setAllArticles(articles);
       if (!isSearchMode) {
         setDisplayArticles(articles);

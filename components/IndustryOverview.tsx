@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, FileText, Eye, Users } from "lucide-react";
-import { Article } from "@/lib/api";
+import { Article } from "@/lib/staticApi";
 import { INDUSTRY_CATEGORIES } from "@/lib/categoryUtils";
 import { formatNumber, formatDate } from "@/lib/utils";
 

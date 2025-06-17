@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { ArticleGrid } from "@/components/ArticleGrid";
 import { Sidebar } from "@/components/Sidebar";
 import { PageHeader } from "@/components/PageHeader";
-import { getArticles, Article } from "@/lib/api";
+import { fetchArticles, Article } from "@/lib/staticApi";
 import { getMacroEconomyArticles, MACRO_ECONOMY_KEYWORDS } from "@/lib/categoryUtils";
 import { Globe, TrendingUp, DollarSign, BarChart3 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -20,7 +20,7 @@ export default function MacroEconomyPage() {
   // 加载文章数据
   useEffect(() => {
     const loadArticles = async () => {
-      const articles = await getArticles();
+      const articles = await fetchArticles();
       setAllArticles(articles);
       
       // 筛选宏观经济文章

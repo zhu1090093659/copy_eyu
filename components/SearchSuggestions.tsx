@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Clock, TrendingUp, Hash, X } from "lucide-react";
 import { getSearchHistory, clearSearchHistory } from "@/lib/utils";
-import { Article } from "@/lib/api";
+import { Article } from "@/lib/staticApi";
 
 interface SearchSuggestionsProps {
   isVisible: boolean;

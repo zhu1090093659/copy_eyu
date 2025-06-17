@@ -4,10 +4,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { getArticleById } from "@/lib/api";
+import { getArticleServer } from "@/lib/serverApi";
 import { formatDate, formatNumber } from "@/lib/utils";
 import { ArticleContent } from "@/components/ArticleContent";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import fs from 'fs';
+import path from 'path';
 
 
 interface ArticlePageProps {
@@ -16,9 +18,30 @@ interface ArticlePageProps {
   };
 }
 
+// 生成所有文章的静态路径
+export async function generateStaticParams() {
+  try {
+    const individualDir = path.join(process.cwd(), 'finance_articles', 'individual');
+    const files = fs.readdirSync(individualDir);
+    
+    const params = files
+      .filter(file => file.endsWith('.json'))
+      .map(file => {
+        const match = file.match(/^(\d+)_/);
+        return match ? { id: match[1] } : null;
+      })
+      .filter(Boolean);
+    
+    return params;
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    return [];
+  }
+}
+
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const articleId = parseInt(params.id);
-  const article = await getArticleById(articleId);
+  const article = await getArticleServer(articleId);
 
   if (!article || !article.full_content) {
     notFound();

@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Eye, Calendar, ArrowRight, Star, Search } from "lucide-react";
-import { Article } from "@/lib/api";
+import { Article } from "@/lib/staticApi";
 import { formatDate, formatNumber, stripHtml, truncateText } from "@/lib/utils";
 import { HighlightText } from "@/components/HighlightText";
 

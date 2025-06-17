@@ -6,7 +6,7 @@ import { ArticleGrid } from "@/components/ArticleGrid";
 import { Sidebar } from "@/components/Sidebar";
 import { PageHeader } from "@/components/PageHeader";
 import { CategoryFilter } from "@/components/CategoryFilter";
-import { getArticles, Article } from "@/lib/api";
+import { fetchArticles, Article } from "@/lib/staticApi";
 import { getInvestmentStrategyArticles, INVESTMENT_STRATEGY_KEYWORDS } from "@/lib/categoryUtils";
 import { Target, TrendingUp, AlertTriangle, Award, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -33,7 +33,7 @@ export default function InvestmentStrategyPage() {
   // 加载文章数据
   useEffect(() => {
     const loadArticles = async () => {
-      const articles = await getArticles();
+      const articles = await fetchArticles();
       setAllArticles(articles);
       
       // 筛选投资策略文章

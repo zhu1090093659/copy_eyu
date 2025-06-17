@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Eye, Calendar, ArrowRight } from "lucide-react";
-import { Article } from "@/lib/api";
+import { Article } from "@/lib/staticApi";
 import { formatDate, formatNumber, truncateText } from "@/lib/utils";
 import Link from "next/link";
 
@@ -20,12 +20,26 @@ export function RelatedArticles({ currentArticleId, category }: RelatedArticlesP
   useEffect(() => {
     const fetchRelatedArticles = async () => {
       try {
-        // 这里模拟获取相关文章的API调用
-        // 在实际应用中，你可能需要创建一个专门的API端点
-        const response = await fetch(`/api/articles/related?id=${currentArticleId}&category=${encodeURIComponent(category)}`);
+        // 从静态数据获取所有文章
+        const response = await fetch('/data/articles.json');
         if (response.ok) {
-          const articles = await response.json();
-          setRelatedArticles(articles);
+          const allArticles = await response.json();
+          
+          // 过滤出同分类的其他文章，排除当前文章
+          const related = allArticles
+            .filter((article: Article) => 
+              article.column.name === category && 
+              article.id !== currentArticleId
+            )
+            .sort((a: Article, b: Article) => {
+              // 优先显示阅读量高的文章
+              const aReadNum = a.full_content?.articleStat?.readNum || 0;
+              const bReadNum = b.full_content?.articleStat?.readNum || 0;
+              return bReadNum - aReadNum;
+            })
+            .slice(0, 5);
+            
+          setRelatedArticles(related);
         }
       } catch (error) {
         console.error('Error fetching related articles:', error);

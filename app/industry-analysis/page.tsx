@@ -7,7 +7,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { PageHeader } from "@/components/PageHeader";
 import { IndustryOverview } from "@/components/IndustryOverview";
 import { CategoryFilter } from "@/components/CategoryFilter";
-import { getArticles, Article } from "@/lib/api";
+import { fetchArticles, Article } from "@/lib/staticApi";
 import { categorizeByIndustry, getIndustryStats, INDUSTRY_CATEGORIES } from "@/lib/categoryUtils";
 import { Factory } from "lucide-react";
 
@@ -21,7 +21,7 @@ export default function IndustryAnalysisPage() {
   // 加载文章数据
   useEffect(() => {
     const loadArticles = async () => {
-      const articles = await getArticles();
+      const articles = await fetchArticles();
       setAllArticles(articles);
       
       // 分类文章

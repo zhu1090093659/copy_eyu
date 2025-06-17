@@ -7,7 +7,7 @@ import { Search, TrendingUp, BarChart3, Menu, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { SearchSuggestions } from "@/components/SearchSuggestions";
-import { Article } from "@/lib/api";
+import { Article } from "@/lib/staticApi";
 
 interface HeaderProps {
   searchQuery: string;

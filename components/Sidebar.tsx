@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Eye, TrendingUp, Calendar } from "lucide-react";
-import { Article } from "@/lib/api";
+import { Article } from "@/lib/staticApi";
 import { formatDate, formatNumber } from "@/lib/utils";
 
 interface SidebarProps {
