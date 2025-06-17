@@ -1,0 +1,66 @@
+{
+  "pages": {
+    "/_not-found": [
+      "static/chunks/webpack-9266e8298162b3ee.js",
+      "static/chunks/fd9d1056-e39949a9d5bd828a.js",
+      "static/chunks/938-d43d4bed4ca940ff.js",
+      "static/chunks/main-app-e76eb1a6fe1f640b.js",
+      "static/chunks/app/_not-found-06a9ba713cb5b7bc.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-9266e8298162b3ee.js",
+      "static/chunks/fd9d1056-e39949a9d5bd828a.js",
+      "static/chunks/938-d43d4bed4ca940ff.js",
+      "static/chunks/main-app-e76eb1a6fe1f640b.js",
+      "static/css/fa9040b6ebac8b8c.css",
+      "static/chunks/app/layout-59da1a50e36dbf8f.js"
+    ],
+    "/article/[id]/page": [
+      "static/chunks/webpack-9266e8298162b3ee.js",
+      "static/chunks/fd9d1056-e39949a9d5bd828a.js",
+      "static/chunks/938-d43d4bed4ca940ff.js",
+      "static/chunks/main-app-e76eb1a6fe1f640b.js",
+      "static/chunks/824-b8a87a2736f67e78.js",
+      "static/chunks/app/article/[id]/page-9e99a3014ec927fb.js"
+    ],
+    "/industry-analysis/page": [
+      "static/chunks/webpack-9266e8298162b3ee.js",
+      "static/chunks/fd9d1056-e39949a9d5bd828a.js",
+      "static/chunks/938-d43d4bed4ca940ff.js",
+      "static/chunks/main-app-e76eb1a6fe1f640b.js",
+      "static/chunks/824-b8a87a2736f67e78.js",
+      "static/chunks/628-66253a235a2f2fc2.js",
+      "static/chunks/569-252dbd3fcbd175f1.js",
+      "static/chunks/app/industry-analysis/page-3595d48aec697858.js"
+    ],
+    "/macro-economy/page": [
+      "static/chunks/webpack-9266e8298162b3ee.js",
+      "static/chunks/fd9d1056-e39949a9d5bd828a.js",
+      "static/chunks/938-d43d4bed4ca940ff.js",
+      "static/chunks/main-app-e76eb1a6fe1f640b.js",
+      "static/chunks/824-b8a87a2736f67e78.js",
+      "static/chunks/628-66253a235a2f2fc2.js",
+      "static/chunks/app/macro-economy/page-87a0ec30f670ed0c.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-9266e8298162b3ee.js",
+      "static/chunks/fd9d1056-e39949a9d5bd828a.js",
+      "static/chunks/938-d43d4bed4ca940ff.js",
+      "static/chunks/main-app-e76eb1a6fe1f640b.js",
+      "static/chunks/824-b8a87a2736f67e78.js",
+      "static/chunks/66-68428b7839382663.js",
+      "static/chunks/628-66253a235a2f2fc2.js",
+      "static/chunks/app/page-d349ae7ebc1ad4aa.js"
+    ],
+    "/investment-strategy/page": [
+      "static/chunks/webpack-9266e8298162b3ee.js",
+      "static/chunks/fd9d1056-e39949a9d5bd828a.js",
+      "static/chunks/938-d43d4bed4ca940ff.js",
+      "static/chunks/main-app-e76eb1a6fe1f640b.js",
+      "static/chunks/824-b8a87a2736f67e78.js",
+      "static/chunks/628-66253a235a2f2fc2.js",
+      "static/chunks/569-252dbd3fcbd175f1.js",
+      "static/chunks/app/investment-strategy/page-5d2aacbde39efb49.js"
+    ]
+  }
+}
